@@ -1,12 +1,191 @@
 ---
 import '@/styles/globals.css'
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import logo from '../assets/logo.svg'
+import avt from "../assets/Avatar.jpg"
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { AvatarComponent } from "@/components/AvatarComponent.jsx";
+import { Button } from '@/components/ui/button';
+import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
+
+import githubLogo from "../assets/brand/github.svg"
+import linkedinLogo from "../assets/brand/linkedin.svg"
+import csharpLogo from "../assets/brand/csharp.svg"
+import javascriptLogo from "../assets/brand/javascript.svg"
+import typescriptLogo from "../assets/brand/typescript.svg"
+import pythonLogo from "../assets/brand/python.svg"
+import dotnetLogo from "../assets/brand/dotnet.svg"
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html>
+  <head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={logo.src} type="image/svg+xml" />
+    <title>OssiLV</title>
+  </head>
+
+  <body class="flex justify-center">
+	<div class="flex-col min-h-screen p-8 md:p-24 ">
+		<!-- Avatar -->
+		<div class="flex h-36 items-center gap-16">
+			<div>
+				<small class="text-sm font-medium leading-none">Hello, I'm Truong,</small>
+				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+					Full stack Developer
+				</h2>
+				<div class="grid grid-cols-2 grid-flow-col justify-start">
+					<a href="https://github.com/OssiLV" class="flex">
+						<img src={githubLogo.src} width="28" height="28">
+						<Button variant="link" className='p-0'>Github</Button>
+					</a>
+					<a href="https://www.linkedin.com/in/ossilv/" class="flex">
+						<img src={linkedinLogo.src} width="26" height="26">
+						<Button variant="link" className='p-0'>Github</Button>
+					</a>					
+				</div>
+				<div>
+					<Button variant="link" className='p-0'>
+						<a href="#contact">Contact Me</a>
+					</Button>
+				</div>
+			</div>
+			<AvatarComponent client:load src={avt.src} alt="@OssiLV" fallbackText="OLV"/>
+		</div>
+
+		<!-- About -->
+		<div id="about" class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				About
+			</h3>
+			<Separator/>
+			<p class="leading-7 [&:not(:first-child)]:mt-6">
+				Enthusiastic Backend Developer with 1 year of experience specializing in Microsoft Power Platform (Power Apps, Power Automate, SharePoint) and API integration, including ERP AX 2012. Skilled in streamlining data flow and enhancing system interoperability, with a goal to grow into a full-stack developer. Actively seeking opportunities to expand skills and deliver innovative solutions in a collaborative environment.
+			  </p>
+		</div>
+
+		<!-- Skills -->
+		<div id="skills" class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				Skills
+			</h3>
+			<Separator/>
+			<ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+				<li>
+					<p>
+						Programming Languages:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={csharpLogo.src} width="28" height="28">
+						C Sharp
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={javascriptLogo.src} width="28" height="28">
+						JavaScript
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={typescriptLogo.src} width="28" height="28">
+						TypeScript
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={pythonLogo.src} width="28" height="28">
+						Python
+					</Badge>
+
+				</li>
+				
+				<li>
+					<p>
+						Frameworks & Libraries:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={dotnetLogo.src} width="28" height="28">
+						Dot Net
+					</Badge>
+				</li>
+				<li>
+					<p>
+						Databases:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={dotnetLogo.src} width="28" height="28">
+						Dot Net
+					</Badge>
+				</li>
+				<li>
+					<p>
+						Tools & Technologies:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={dotnetLogo.src} width="28" height="28">
+						Dot Net
+					</Badge>
+				</li>
+				<li>
+					<p>
+						Interests:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={dotnetLogo.src} width="28" height="28">
+						Dot Net
+					</Badge>
+				</li>
+			  </ul>
+		</div>
+
+		<!-- Experience -->
+		<div id="exp" class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				Experience
+			</h3>
+			<Separator/>
+			
+		</div>
+
+		<!-- Projects -->
+		<div class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				Projects
+			</h3>
+			<Separator/>
+			
+		</div>
+
+		<!-- Contact -->
+		<div id="contact" class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				Contact
+			</h3>
+			<Separator/>
+			<p class="mt-6 list-disc [&>li]:mt-2 text-md text-gray-600 mb-12">I would love to hear from you! Please fill out the form below to get in touch.</p>
+
+			<form action="#" method="POST" class="space-y-6">
+				<!-- Name Field -->
+				<div>
+					<label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+					<input type="text" id="name" name="name" required placeholder="Your Full Name" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+				</div>
+
+				<!-- Email Field -->
+				<div>
+					<label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+					<input type="email" id="email" name="email" required placeholder="Your Email Address" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+				</div>
+
+				<!-- Message Field -->
+				<div>
+					<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+					<textarea id="message" name="message" rows="4" required placeholder="Your Message" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+				</div>
+
+				<!-- Submit Button -->
+				<Button type="submit" >
+					Send Message
+				</Button>
+			</form>
+		</div>
+	</div>
+  </body>
+
+</html>

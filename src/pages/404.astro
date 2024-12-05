@@ -1,0 +1,26 @@
+---
+import '@/styles/globals.css'
+import notFoundIcon from '../assets/404.svg'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" href={notFoundIcon.src} type="image/svg+xml" />
+    <title>404 | Not found</title>
+  </head>
+
+  <body>
+	<div class="flex min-h-screen justify-center items-center">
+        <div class="">
+            <h1 class="scroll-m-20 text-4xl font-extrabold tracking-widest lg:text-5xl text-center">
+                404
+            </h1>
+            <small class="text-sm font-medium leading-none">Not found</small>
+        </div>
+    </div>
+  </body>
+</html>
