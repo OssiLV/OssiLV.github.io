@@ -3,7 +3,6 @@ import '@/styles/globals.css'
 import logo from '../assets/logo.svg'
 import avt from "../assets/Avatar.jpg"
 
-import { AvatarComponent } from "@/components/AvatarComponent.jsx";
 import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
@@ -51,7 +50,8 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 					</Button>
 				</div>
 			</div>
-			<AvatarComponent client:load src={avt.src} alt="@OssiLV" fallbackText="OLV"/>
+			<img class="w-36 h-36 md:w-44 md:h-44 rounded-3xl" src={avt.src} alt="@OssiLV">
+			<!-- <AvatarComponent client:load src={avt.src} alt="" fallbackText="OLV"/> -->
 		</div>
 
 		<!-- About -->
