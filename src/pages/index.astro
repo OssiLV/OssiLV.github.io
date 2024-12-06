@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Accordion } from "@/components/Accordion";
+import { Scroll } from "@/components/Scroll";
+
+
 
 
 import githubLogo from "../assets/brand/github.svg"
@@ -27,6 +30,7 @@ import dockerLogo from "../assets/brand/docker.svg"
 import gitLogo from "../assets/brand/git.svg"
 import notionLogo from "../assets/brand/notion.svg"
 import astroLogo from "../assets/brand/astro.svg"
+import powerappsLogo from "../assets/brand/powerapps.svg"
 
 
 const accordionData = [
@@ -47,17 +51,40 @@ const accordionData = [
 				description: "Deliver ongoing support, manage operations, and ensure the seamless maintenance of applications."
 			}
 		]
+	}
+];
+
+const projectItems = [
+	{
+		title: "Algorithm Visualizer",
+		description: "",
+		img: "",
+		url: "https://github.com/OssiLV/Algorithm-visualizer"
 	},
 	{
-		title: "Is it styled?",
-		description:
-			"Yes. It comes with default styles that matches the other components' aesthetic.",
+		title: "PDF Extension",
+		description: "",
+		img: "",
+		url: "https://github.com/OssiLV/Winform-PDF-Extensions"
 	},
 	{
-		title: "Is it animated?",
-		description:
-			"Yes. It's animated by default, but you can disable it if you prefer.",
+		title: "Car Booking",
+		description: "",
+		img: "",
+		url: "https://github.com/OssiLV/CarBooking"
 	},
+	{
+		title: "LMS Elearning",
+		description: "",
+		img: "",
+		url: "https://github.com/OssiLV/LMS_Elearning"
+	},
+	{
+		title: "Discord Clone",
+		description: "",
+		img: "",
+		url: "https://github.com/OssiLV/Discord-Clone"
+	}
 ];
 ---
 
@@ -82,13 +109,13 @@ const accordionData = [
 					Full stack Developer
 				</h2>
 				<div class="flex-col md:grid md:grid-cols-2 md:grid-flow-col md:justify-start">
-					<a href="https://github.com/OssiLV" class="flex">
+					<a href="https://github.com/OssiLV" class="flex gap-2">
 						<img src={githubLogo.src} width="28" height="28">
 						<Button variant="link" className='p-0'>Github</Button>
 					</a>
-					<a href="https://www.linkedin.com/in/ossilv/" class="flex">
+					<a href="https://www.linkedin.com/in/ossilv/" class="flex gap-2">
 						<img src={linkedinLogo.src} width="26" height="26">
-						<Button variant="link" className='p-0'>Github</Button>
+						<Button variant="link" className='p-0'>LinkedIn</Button>
 					</a>					
 				</div>
 				<div>
@@ -112,6 +139,48 @@ const accordionData = [
 			  </p>
 		</div>
 
+		<!-- Education -->
+		<div id="education" class="mt-16">
+			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+				Education
+			</h3>
+			<Separator/>
+			<div class="pt-4">
+				<div class="flex gap-4 relative h-24">
+				  	<!-- Timeline Line -->
+				  	<div class="absolute top-0 left-5 h-full w-1 bg-gray-300"></div>
+				  
+				  	<!-- Circle with Step Number -->
+				  	<div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold z-10">
+						1
+				  	</div>
+			  
+				  	<!-- Details -->
+				  	<div>
+						<p class="text-sm text-gray-500">2021 - 2024 (Software application major)</p>
+						<h3 class="text-lg font-semibold text-gray-800">Bach Khoa Saigon College</h3>
+						<p class="text-sm">GPA: 3.7 / 4</p>
+				  	</div>
+				</div>
+
+				<div class="flex gap-4 relative">
+					<!-- Timeline Line -->
+					<div class="absolute top-0 left-5 h-full w-1 bg-gray-300"></div>
+				
+					<!-- Circle with Step Number -->
+					<div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold z-10">
+					  2
+					</div>
+			
+					<!-- Details -->
+					<div>
+						<p class="text-sm text-gray-500">2024 - present (Information technology)</p>
+						<h3 class="text-lg font-semibold text-gray-800"> University of Information Technology</h3>
+						<!-- <p class="text-sm">GPA: </p> -->
+				  	</div>
+			  </div>
+			</div>
+		</div>
 		<!-- Skills -->
 		<div id="skills" class="mt-16">
 			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -221,6 +290,29 @@ const accordionData = [
 					</Badge>
 				</li>
 
+				<!--Others -->
+				<li>
+					<p>
+						Others:
+					</p>
+					<Badge variant="outline" className='gap-2'>
+						<img src={powerappsLogo.src} width="28" height="28">
+						Power Apps
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://th.bing.com/th?id=ODLS.b1b99407-23f4-4e90-9c28-e3c49a262a1b&w=32&h=32&qlt=95&pcl=fffffa&o=6&pid=1.2" width="28" height="28">
+						Power Automate
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/Socialfooter_Sharepoint_80x80_RE2lJfT?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=40&hei=40&qlt=100&fmt=png-alpha&fit=constrain" width="28" height="28">
+						SharePoint
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://th.bing.com/th?id=ODLS.95a9cd09-19c6-459a-920d-669d797331cc&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" width="28" height="28">
+						PowerBI
+					</Badge>
+				</li>
+
 				<!-- Tools & Technologies -->
 				<!-- <li>
 					<p>
@@ -240,11 +332,7 @@ const accordionData = [
 				Experience
 			</h3>
 			<Separator/>
-		
 			<Accordion data={accordionData} client:idle />
-	
-			  
-			
 		</div>
 
 		<!-- Projects -->
@@ -253,7 +341,7 @@ const accordionData = [
 				Projects
 			</h3>
 			<Separator/>
-			
+			<Scroll items={projectItems} client:idle />
 		</div>
 
 		<!-- Contact -->

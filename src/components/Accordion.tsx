@@ -22,10 +22,10 @@ import {
               <AccordionTrigger className="text-lg">{item.title}</AccordionTrigger>
               <AccordionContent>
                 {item.description}
-                <ul className="list-item">
+                <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                     {item.list?.map(item => (
-                        <li key={item.description} className="">
-                            {item.description}
+                        <li key={item.description} className="leading-4 [&:not(:first-child)]:mt-6">
+                           {item.description}
                         </li>
                     ))}
                 </ul>
