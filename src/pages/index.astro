@@ -6,7 +6,6 @@ import avt from "../assets/Avatar.jpg"
 import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { Accordion } from "@/components/Accordion";
 import {
     Card,
     CardContent,
@@ -17,6 +16,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Accordion } from "@/components/Accordion";
 
 
 
@@ -41,6 +41,32 @@ import astroLogo from "../assets/brand/astro.svg"
 import powerappsLogo from "../assets/brand/powerapps.svg"
 import shadcnuiLogo from "../assets/brand/shadcnui.svg"
 
+const navItems = [
+	{
+		title: "About",
+		url: "#about"
+	},
+	{
+		title: "Education",
+		url: "#education"
+	},
+	{
+		title: "Skills",
+		url: "#skills"
+	},
+	{
+		title: "Experience",
+		url: "#exp"
+	},
+	{
+		title: "Projects",
+		url: "#projects"
+	},
+	{
+		title: "Contact",
+		url: "#contact"
+	},
+]
 
 const accordionData = [
 	{
@@ -66,31 +92,31 @@ const accordionData = [
 const projectItems = [
 	{
 		title: "Algorithm Visualizer",
-		description: "",
+		description: "Dec 2024",
 		img: "",
 		url: "https://github.com/OssiLV/Algorithm-visualizer"
 	},
 	{
 		title: "PDF Extension",
-		description: "",
+		description: "Aug 2024",
 		img: "",
 		url: "https://github.com/OssiLV/Winform-PDF-Extensions"
 	},
 	{
 		title: "Car Booking",
-		description: "",
+		description: "Aug 2024 - Oct 2024",
 		img: "",
 		url: "https://github.com/OssiLV/CarBooking"
 	},
 	{
 		title: "LMS Elearning",
-		description: "",
+		description: "Oct 2024 - Nov 2024",
 		img: "",
 		url: "https://github.com/OssiLV/LMS_Elearning"
 	},
 	{
 		title: "Discord Clone",
-		description: "",
+		description: "Sep 2023 - Sep 2023",
 		img: "",
 		url: "https://github.com/OssiLV/Discord-Clone"
 	}
@@ -106,7 +132,28 @@ const projectItems = [
     <title>OssiLV</title>
   </head>
 
-  <body class="flex justify-center">
+  <body class="">
+	<!-- Header -->
+	<header class="sticky top-0 z-50 w-full h-6 md:h-16 md:border-b border-border/40 bg-background/95 md:backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:border-border">
+		<div class=" max-w-7xl mx-auto px-6 py-4 flex-col justify-center">
+			<!-- Navigation -->
+			<nav class="hidden md:flex justify-center space-x-8">
+				{navItems.map(item => <a href={item.url} class="hover:text-slate-900/80 transition-all duration-150 ">{item.title}</a>)}
+				<a href="https://1drv.ms/b/s!AoJ0r2DuYQANg_gp5BUdS9RTjb1bHA?e=FWnrbR" download="CV_VO_HOANG_ANH_TRUONG.pdf">
+					<Button size="sm" variant="outline" className="w-full transition-all duration-150">Download CV</Button>
+				</a>
+			</nav>
+			<div class="md:hidden flex justify-end">
+				<a href="https://1drv.ms/b/s!AoJ0r2DuYQANg_gp5BUdS9RTjb1bHA?e=FWnrbR" download="CV_VO_HOANG_ANH_TRUONG.pdf">
+					<Button size="sm" variant="default" className="w-full transition-all duration-150">Download CV</Button>
+				</a>
+			</div>
+		</div>
+		
+	</header>
+
+	
+
 	<div class="flex-col min-h-screen p-8 md:p-24 ">
 		<!-- Avatar -->
 		<div class="flex h-48 items-center gap-8">
@@ -177,7 +224,7 @@ const projectItems = [
 			
 					<!-- Details -->
 					<div>
-						<p class="text-sm text-gray-500">2024 - present (Information technology)</p>
+						<p class="text-sm text-gray-500">2024 - Present (Information technology)</p>
 						<h3 class="text-lg font-semibold text-gray-800"> University of Information Technology</h3>
 						<!-- <p class="text-sm">GPA: </p> -->
 				  	</div>
@@ -352,19 +399,19 @@ const projectItems = [
 		</div>
 
 		<!-- Projects -->
-		<div class="mt-16">
+		<div id="projects" class="mt-16">
 			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
 				Projects
 			</h3>
 			<Separator/>
-			<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-56 md:max-h-72 overflow-y-auto">
+			<div class="grid grid-cols-2 mt-4 md:grid-cols-3 gap-4 max-h-48 md:max-h-72 overflow-y-auto">
 				{projectItems.map(item => {
 					return <Card key={item.title} className="">
 								<CardHeader>
 									<CardTitle>{item.title}</CardTitle>
 									<CardDescription>{item.description}</CardDescription>
 								</CardHeader>
-								<CardContent className="w-40 h-14">
+								<CardContent className="w-36 h-14">
 									<Button size="sm" variant="link" className="p-0 text-blue-900 underline">
 										<a href={item.url}>Go to project</a>
 									</Button>
