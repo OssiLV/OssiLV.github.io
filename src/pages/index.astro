@@ -6,6 +6,8 @@ import avt from "../assets/Avatar.jpg"
 import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
+import { Accordion } from "@/components/Accordion";
+
 
 import githubLogo from "../assets/brand/github.svg"
 import linkedinLogo from "../assets/brand/linkedin.svg"
@@ -14,6 +16,49 @@ import javascriptLogo from "../assets/brand/javascript.svg"
 import typescriptLogo from "../assets/brand/typescript.svg"
 import pythonLogo from "../assets/brand/python.svg"
 import dotnetLogo from "../assets/brand/dotnet.svg"
+import nestjsLogo from "../assets/brand/nestjs.svg"
+import reactjsLogo from "../assets/brand/reactjs.svg"
+import nextjsLogo from "../assets/brand/nextjs.svg"
+import mongodbLogo from "../assets/brand/mongo.svg"
+import sqlserverLogo from "../assets/brand/sql.svg"
+import mysqlLogo from "../assets/brand/mysql.svg"
+import postgresqlLogo from "../assets/brand/postgresql.svg"
+import dockerLogo from "../assets/brand/docker.svg"
+import gitLogo from "../assets/brand/git.svg"
+import notionLogo from "../assets/brand/notion.svg"
+import astroLogo from "../assets/brand/astro.svg"
+
+
+const accordionData = [
+	{
+		title: "AIG",
+		description: "AIG (ASIA Ingredients GROUP) is the leading company in Vietnam in the field of supplying and manufacturing food ingredients. I work as a Application Specialist and a Microsoft Power Platform developer here, responsible for building and maintaining internal applications.",
+		list: [
+			{
+				description: "Analyze user requirements and translate them into actionable development plans."
+			},
+			{
+				description: "Identify and implement optimal solutions to meet development objectives."
+			},
+			{
+				description: "Provide user training to ensure effective adoption and utilization of applications."
+			},
+			{
+				description: "Deliver ongoing support, manage operations, and ensure the seamless maintenance of applications."
+			}
+		]
+	},
+	{
+		title: "Is it styled?",
+		description:
+			"Yes. It comes with default styles that matches the other components' aesthetic.",
+	},
+	{
+		title: "Is it animated?",
+		description:
+			"Yes. It's animated by default, but you can disable it if you prefer.",
+	},
+];
 ---
 
 <html>
@@ -23,18 +68,20 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href={logo.src} type="image/svg+xml" />
     <title>OssiLV</title>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5194031821478739"
+     crossorigin="anonymous"></script>
   </head>
 
   <body class="flex justify-center">
 	<div class="flex-col min-h-screen p-8 md:p-24 ">
 		<!-- Avatar -->
-		<div class="flex h-36 items-center gap-16">
+		<div class="flex h-48 items-center gap-8">
 			<div>
 				<small class="text-sm font-medium leading-none">Hello, I'm Truong,</small>
 				<h2 class="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
 					Full stack Developer
 				</h2>
-				<div class="grid grid-cols-2 grid-flow-col justify-start">
+				<div class="flex-col md:grid md:grid-cols-2 md:grid-flow-col md:justify-start">
 					<a href="https://github.com/OssiLV" class="flex">
 						<img src={githubLogo.src} width="28" height="28">
 						<Button variant="link" className='p-0'>Github</Button>
@@ -72,6 +119,7 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 			</h3>
 			<Separator/>
 			<ul class="my-6 ml-6 list-disc [&>li]:mt-2">
+				<!-- Programing languages -->
 				<li>
 					<p>
 						Programming Languages:
@@ -95,6 +143,7 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 
 				</li>
 				
+				<!-- Frameworks & Libraries -->
 				<li>
 					<p>
 						Frameworks & Libraries:
@@ -103,26 +152,77 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 						<img src={dotnetLogo.src} width="28" height="28">
 						Dot Net
 					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={nestjsLogo.src} width="28" height="28">
+						NestJS
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={nextjsLogo.src} width="28" height="28">
+						NextJS
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={reactjsLogo.src} width="28" height="28">
+						ReactJS
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={astroLogo.src} width="28" height="28">
+						Astro
+					</Badge>
 				</li>
+
+				<!-- Databases -->
 				<li>
 					<p>
 						Databases:
 					</p>
 					<Badge variant="outline" className='gap-2'>
-						<img src={dotnetLogo.src} width="28" height="28">
-						Dot Net
+						<img src={mongodbLogo.src} width="28" height="28">
+						MongoDB
 					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={sqlserverLogo.src} width="28" height="28">
+						SQL Server
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={mysqlLogo.src} width="28" height="28">
+						My SQL
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={postgresqlLogo.src} width="28" height="28">
+						PostgreSQL
+					</Badge>
+					
 				</li>
+
+				<!-- Tools & Technologies -->
 				<li>
 					<p>
 						Tools & Technologies:
 					</p>
 					<Badge variant="outline" className='gap-2'>
-						<img src={dotnetLogo.src} width="28" height="28">
-						Dot Net
+						<img src={dockerLogo.src} width="28" height="28">
+						Docker
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={gitLogo.src} width="28" height="28">
+						Git
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={githubLogo.src} width="28" height="28">
+						Github
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://cdn.holistics.io/logo-dbdiagram-notext.ico" width="28" height="28">
+						dbdiagram.io
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={notionLogo.src} width="28" height="28">
+						Notion
 					</Badge>
 				</li>
-				<li>
+
+				<!-- Tools & Technologies -->
+				<!-- <li>
 					<p>
 						Interests:
 					</p>
@@ -130,7 +230,7 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 						<img src={dotnetLogo.src} width="28" height="28">
 						Dot Net
 					</Badge>
-				</li>
+				</li> -->
 			  </ul>
 		</div>
 
@@ -140,6 +240,10 @@ import dotnetLogo from "../assets/brand/dotnet.svg"
 				Experience
 			</h3>
 			<Separator/>
+		
+			<Accordion data={accordionData} client:idle />
+	
+			  
 			
 		</div>
 
