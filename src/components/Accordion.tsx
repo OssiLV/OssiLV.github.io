@@ -18,7 +18,7 @@ import {
       <BaseAccordion type="single" collapsible className="w-full">
         {data.map((item, i) => {
           return (
-            <AccordionItem value={`item-${i.toFixed()}`}>
+            <AccordionItem key={item.title} value={`item-${i.toFixed()}`}>
               <AccordionTrigger className="text-lg">{item.title}</AccordionTrigger>
               <AccordionContent>
                 {item.description}

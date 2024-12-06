@@ -181,6 +181,7 @@ const projectItems = [
 			  </div>
 			</div>
 		</div>
+
 		<!-- Skills -->
 		<div id="skills" class="mt-16">
 			<h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
@@ -352,7 +353,9 @@ const projectItems = [
 			<Separator/>
 			<p class="mt-6 list-disc [&>li]:mt-2 text-md text-gray-600 mb-12">I would love to hear from you! Please fill out the form below to get in touch.</p>
 
-			<form action="#" method="POST" class="space-y-6">
+			<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+				<input type="hidden" name="access_key" value="c0eb8e3f-6c12-4f49-a69b-3ed04070d4d0">
+
 				<!-- Name Field -->
 				<div>
 					<label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
@@ -372,7 +375,7 @@ const projectItems = [
 				</div>
 
 				<!-- Submit Button -->
-				<Button type="submit" >
+				<Button type="submit">
 					Send Message
 				</Button>
 			</form>
