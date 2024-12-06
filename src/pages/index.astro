@@ -121,6 +121,9 @@ const projectItems = [
 		url: "https://github.com/OssiLV/Discord-Clone"
 	}
 ];
+
+const resumeAddress = "https://1drv.ms/b/s!AoJ0r2DuYQANg_gtDkfS1TUvMONJgA?e=388g4k"
+
 ---
 
 <html>
@@ -139,12 +142,12 @@ const projectItems = [
 			<!-- Navigation -->
 			<nav class="hidden md:flex justify-center space-x-8">
 				{navItems.map(item => <a href={item.url} class="hover:text-slate-900/80 transition-all duration-150 ">{item.title}</a>)}
-				<a href="https://1drv.ms/b/s!AoJ0r2DuYQANg_gp5BUdS9RTjb1bHA?e=FWnrbR" download="CV_VO_HOANG_ANH_TRUONG.pdf">
+				<a href={resumeAddress} download="CV_VO_HOANG_ANH_TRUONG.pdf">
 					<Button size="sm" variant="outline" className="w-full transition-all duration-150">Download CV</Button>
 				</a>
 			</nav>
 			<div class="md:hidden flex justify-end">
-				<a href="https://1drv.ms/b/s!AoJ0r2DuYQANg_gp5BUdS9RTjb1bHA?e=FWnrbR" download="CV_VO_HOANG_ANH_TRUONG.pdf">
+				<a href={resumeAddress} download="CV_VO_HOANG_ANH_TRUONG.pdf">
 					<Button size="sm" variant="default" className="w-full transition-all duration-150">Download CV</Button>
 				</a>
 			</div>
