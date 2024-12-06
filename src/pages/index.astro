@@ -101,7 +101,6 @@ const projectItems = [
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" href={logo.src} type="image/svg+xml" />
     <title>OssiLV</title>
-	 <script src="https://web3forms.com/client/script.js" async defer></script>
   </head>
 
   <body class="flex justify-center">
@@ -372,12 +371,14 @@ const projectItems = [
 			<Separator/>
 			<p class="mt-6 list-disc [&>li]:mt-2 text-md text-gray-600 mb-12">I would love to hear from you! Please fill out the form below to get in touch.</p>
 
-			<form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+
+
+			<form id="contact_form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
 				<input type="hidden" name="access_key" value="c0eb8e3f-6c12-4f49-a69b-3ed04070d4d0">
-				<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 				<input type="hidden" name="from_name" value="Get in touch">
 				<input type="hidden" name="subject" value="Someone wanna get in touch from your portfolio website">
 				
+
 				<!-- Name Field -->
 				<div>
 					<label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
@@ -403,9 +404,24 @@ const projectItems = [
 					Send Message
 				</Button>
 			</form>
+
 			
 		</div>
 	</div>
+	<script lang="">
+		const form = document.getElementById('contact_form');
+		form.addEventListener('submit', function(e) {
+			
+			const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+		
+			if (!hCaptcha) {
+				e.preventDefault();
+				alert("Please hit checkbox captcha")
+				return
+			}
+		});
+		</script>
+	<script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
   
 </html>
