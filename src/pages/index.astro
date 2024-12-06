@@ -14,7 +14,9 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-
+import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
 
 
 
@@ -37,6 +39,7 @@ import gitLogo from "../assets/brand/git.svg"
 import notionLogo from "../assets/brand/notion.svg"
 import astroLogo from "../assets/brand/astro.svg"
 import powerappsLogo from "../assets/brand/powerapps.svg"
+import shadcnuiLogo from "../assets/brand/shadcnui.svg"
 
 
 const accordionData = [
@@ -155,9 +158,7 @@ const projectItems = [
 				  	<div class="absolute top-0 left-5 h-full w-1 bg-gray-300"></div>
 				  
 				  	<!-- Circle with Step Number -->
-				  	<div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold z-10">
-						1
-				  	</div>
+				  	<div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold z-10"></div>
 			  
 				  	<!-- Details -->
 				  	<div>
@@ -172,9 +173,7 @@ const projectItems = [
 					<div class="absolute top-0 left-5 h-full w-1 bg-gray-300"></div>
 				
 					<!-- Circle with Step Number -->
-					<div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold z-10">
-					  2
-					</div>
+					<div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-semibold z-10"></div>
 			
 					<!-- Details -->
 					<div>
@@ -241,6 +240,18 @@ const projectItems = [
 					<Badge variant="outline" className='gap-2'>
 						<img src={astroLogo.src} width="28" height="28">
 						Astro
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://th.bing.com/th?id=ODLS.7ee38d86-4472-452b-806c-fd7945e59518&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" width="28" height="28">
+						ExpressJS
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src="https://th.bing.com/th?id=ODLS.095f9b22-a70b-47ed-bdb1-070466f08dc4&w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2" width="28" height="28">
+						Tailwind
+					</Badge>
+					<Badge variant="outline" className='gap-2'>
+						<img src={shadcnuiLogo.src} width="28" height="28">
+						Shadcn/ui
 					</Badge>
 				</li>
 
@@ -318,7 +329,7 @@ const projectItems = [
 					</Badge>
 				</li>
 
-				<!-- Tools & Technologies -->
+				<!-- Interests -->
 				<!-- <li>
 					<p>
 						Interests:
@@ -381,20 +392,25 @@ const projectItems = [
 
 				<!-- Name Field -->
 				<div>
-					<label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
-					<input type="text" id="name" name="name" required placeholder="Your Full Name" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+					<Label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</Label>
+					<Input type="text" id="name" name="name" required placeholder="Your Full Name"/>
 				</div>
 
 				<!-- Email Field -->
 				<div>
-					<label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-					<input type="email" id="email" name="email" required placeholder="Your Email Address" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+					<Label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</Label>
+					<Input type="email" id="email" name="email" required placeholder="Your Email Address"/>
 				</div>
 
 				<!-- Message Field -->
 				<div>
-					<label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-					<textarea id="message" name="message" rows="4" required placeholder="Your Message" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+					<Label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</Label>
+					<Textarea
+						placeholder="Your Message"
+						id="message" name="message"  required
+                 
+                	/>
+					<!-- <textarea id="message" name="message" rows="4" required placeholder="Your Message" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea> -->
 				</div>
 
 				<div class="h-captcha" data-captcha="true"></div>
@@ -420,7 +436,7 @@ const projectItems = [
 				return
 			}
 		});
-		</script>
+	</script>
 	<script src="https://web3forms.com/client/script.js" async defer></script>
   </body>
   
