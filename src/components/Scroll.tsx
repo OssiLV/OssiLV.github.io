@@ -19,7 +19,7 @@ interface Props {
   
   export function Scroll({ items }: Props) {
     return (
-        <ScrollArea className="w-80 md:w-[50rem] whitespace-nowrap rounded-md">
+        <ScrollArea className="w-80 md:w-[38rem] lg:w-[57.9rem] whitespace-nowrap rounded-md">
            <div className="flex w-max space-x-4 p-4 md:gap-4">
                 {items.map(item => {
                         return <Card key={item.title} className="w-44 h-32">
