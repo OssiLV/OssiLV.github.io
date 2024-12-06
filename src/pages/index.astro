@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button';
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { Accordion } from "@/components/Accordion";
-import { Scroll } from "@/components/Scroll";
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
 
 
 
@@ -342,7 +348,21 @@ const projectItems = [
 				Projects
 			</h3>
 			<Separator/>
-			<Scroll items={projectItems} client:idle />
+			<div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-h-56 md:max-h-72 overflow-y-auto">
+				{projectItems.map(item => {
+					return <Card key={item.title} className="">
+								<CardHeader>
+									<CardTitle>{item.title}</CardTitle>
+									<CardDescription>{item.description}</CardDescription>
+								</CardHeader>
+								<CardContent className="w-40 h-14">
+									<Button size="sm" variant="link" className="p-0 text-blue-900 underline">
+										<a href={item.url}>Go to project</a>
+									</Button>
+								</CardContent>
+							</Card>
+				})}
+			</div>
 		</div>
 
 		<!-- Contact -->
